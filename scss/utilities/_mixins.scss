@@ -1,0 +1,64 @@
+@mixin mq($breakpoint_value) {
+  @media (min-width: $breakpoint_value) {
+    & {
+    @content;
+    }
+  }
+}
+
+// This mixin styles each .col class when the viewport is at least 768px
+
+@mixin column_styles {
+  $total: 8.33%;
+  @for $i from 1 through 12 {
+    @if ($i == 1) {
+      .col-#{$i} {
+        @include mq($break) {
+          flex-basis: $total;
+        } 
+       }
+      $total: $total + 8.34%; 
+    }
+    @else if ($i == 4) {
+      .col-#{$i} {
+        @include mq($break) {
+          flex-basis: $total;
+        }
+      }
+      $total: $total + 8.34%;
+    }
+    @else if ($i == 7) {
+      .col-#{$i} {
+        @include mq($break) {
+          flex-basis: $total;
+        }
+       }
+      $total: $total + 8.34%;
+    }
+    @else if ($i == 10) {
+      .col-#{$i} {
+        @include mq($break) {
+          flex-basis: $total;
+        }
+      }
+      $total: $total + 8.34%;
+    }
+    @else {
+      .col-#{$i} {
+        @include mq($break) {
+          flex-basis: $total;
+       }
+      }
+      $total: $total + 8.33%;
+    }
+  }
+}
+
+// This mixin adds a hover effect to each button 
+
+@mixin hover_effect($background_color) {
+  &:hover {
+    background-color: lighten($background_color, 15%);
+    transition-duration: 1s;
+  }
+}

@@ -1,0 +1,52 @@
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    color: $white;
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+    @include mq($break) {
+      padding: 10px 30px;
+    }
+  }
+  
+  .btn + .btn {
+    @include mq($break) {
+      margin-left: 10px;
+    }
+  }
+
+  .default {
+    background-color: $secondary-color;
+    @include hover_effect($secondary-color);
+  }
+  
+  .error {
+    background-color: $error-color;
+    @include hover_effect($error-color);
+  }
+  
+  .info {
+    background-color: #927bc1;
+    @include hover_effect(#927bc1);
+  }
+  
+  .success {
+    background-color: #63cc82;
+    @include hover_effect(#63cc82);
+  }
+  
+  .warning {
+    background-color: $warning-color;
+    @include hover_effect($warning-color);
+  }
+  
+  .logo {
+    @include mq($break) {
+      margin-left: initial;
+      margin-right: initial;
+    }
+  }
+  
